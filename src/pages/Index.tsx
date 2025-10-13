@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
 import Hero from "@/components/Hero";
+import EventVideos from "@/components/EventVideos";
 import VideoCarousel from "@/components/VideoCarousel";
 import PhotoGrid from "@/components/PhotoGrid";
 import PressMentions from "@/components/PressMentions";
@@ -25,6 +26,7 @@ const Index = () => {
 
       {/* Main Content */}
       <Hero />
+      <EventVideos />
       <VideoCarousel />
       <PhotoGrid />
       <PressMentions />
