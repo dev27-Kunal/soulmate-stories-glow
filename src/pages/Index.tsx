@@ -4,6 +4,7 @@ import { Heart } from "lucide-react";
 import Hero from "@/components/Hero";
 import EventVideos from "@/components/EventVideos";
 import VideoCarousel from "@/components/VideoCarousel";
+import ParisPhotographers from "@/components/ParisPhotographers";
 import PhotoGrid from "@/components/PhotoGrid";
 import PressMentions from "@/components/PressMentions";
 import StatsSection from "@/components/StatsSection";
@@ -28,6 +29,7 @@ const Index = () => {
       <Hero />
       <EventVideos />
       <VideoCarousel />
+      <ParisPhotographers />
       <PhotoGrid />
       <PressMentions />
       <StatsSection />
