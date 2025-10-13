@@ -1,7 +1,13 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Play, Image } from "lucide-react";
+import BrandFilmModal from "@/components/BrandFilmModal";
+import MediaGalleryModal from "@/components/MediaGalleryModal";
 
 const ClosingCTA = () => {
+  const [isBrandFilmOpen, setIsBrandFilmOpen] = useState(false);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+
   return (
     <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Bokeh Background Effect */}
@@ -25,6 +31,7 @@ const ClosingCTA = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             size="lg"
+            onClick={() => setIsBrandFilmOpen(true)}
             className="gradient-gold hover:shadow-elegant transition-elegant rounded-full px-8 py-6 text-lg font-sans font-semibold min-w-[200px]"
           >
             <Play className="w-5 h-5 mr-2" fill="currentColor" />
@@ -34,12 +41,17 @@ const ClosingCTA = () => {
           <Button 
             size="lg"
             variant="outline"
+            onClick={() => setIsGalleryOpen(true)}
             className="border-2 border-romantic-dark text-romantic-dark hover:bg-romantic-dark hover:text-white transition-elegant rounded-full px-8 py-6 text-lg font-sans font-semibold min-w-[200px]"
           >
             <Image className="w-5 h-5 mr-2" />
             Explore Media Gallery
           </Button>
         </div>
+
+        {/* Modals */}
+        <BrandFilmModal open={isBrandFilmOpen} onOpenChange={setIsBrandFilmOpen} />
+        <MediaGalleryModal open={isGalleryOpen} onOpenChange={setIsGalleryOpen} />
 
         {/* Decorative Light Flares */}
         <div className="absolute -top-10 left-1/4 w-2 h-2 bg-warm-gold rounded-full blur-sm opacity-60 animate-pulse" />
