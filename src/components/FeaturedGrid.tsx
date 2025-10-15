@@ -113,22 +113,16 @@ const FeaturedGrid = () => {
     },
   ];
 
+  const topArticles = [featuredArticle, ...sidebarArticles];
+
   return (
     <section className="py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Hero Section - Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {/* Left: Featured Article */}
-          <div>
-            <ArticleCard {...featuredArticle} featured />
-          </div>
-
-          {/* Right: Sidebar Articles */}
-          <div className="space-y-6">
-            {sidebarArticles.map((article, index) => (
-              <ArticleCard key={index} {...article} />
-            ))}
-          </div>
+        {/* Featured Stories - 2x2 Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {topArticles.map((article, index) => (
+            <ArticleCard key={index} {...article} />
+          ))}
         </div>
 
         {/* Latest Stories Grid */}
