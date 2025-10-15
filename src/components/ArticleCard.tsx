@@ -43,16 +43,14 @@ const ArticleCard = ({
       }`}
     >
       {/* Image */}
-      {!featured && (
-        <div className="relative overflow-hidden rounded-lg mb-4 aspect-[16/10]">
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </div>
-      )}
+      <div className="relative overflow-hidden rounded-lg mb-4 aspect-[16/10]">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
 
       {/* Category */}
       <div className="mb-2">
