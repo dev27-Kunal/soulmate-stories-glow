@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
-import Header from "@/components/Header";
+import Hero from "@/components/Hero";
 import FlashNews from "@/components/FlashNews";
 import FeaturedGrid from "@/components/FeaturedGrid";
 import EventVideos from "@/components/EventVideos";
@@ -18,8 +18,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header Navigation */}
-      <Header />
+      {/* Hero Section */}
+      <Hero />
 
       {/* Flash News Popup */}
       <FlashNews />
