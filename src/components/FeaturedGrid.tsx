@@ -114,7 +114,7 @@ const FeaturedGrid = () => {
   ];
 
   return (
-    <section className="py-8 px-4 sm:px-6 lg:px-8">
+    <section className="pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Hero Section - Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
