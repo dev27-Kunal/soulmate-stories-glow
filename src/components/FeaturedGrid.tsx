@@ -118,8 +118,8 @@ const FeaturedGrid = () => {
   return (
     <section className="py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Featured Stories - 2x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {/* Featured Stories - Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-12">
           {topArticles.map((article, index) => (
             <ArticleCard key={index} {...article} />
           ))}
@@ -127,8 +127,8 @@ const FeaturedGrid = () => {
 
         {/* Latest Stories Grid */}
         <div className="border-t border-border pt-8">
-          <h2 className="text-2xl font-bold mb-6">LATEST STORIES</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">LATEST STORIES</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
             {mainArticles.map((article, index) => (
               <ArticleCard key={index} {...article} />
             ))}

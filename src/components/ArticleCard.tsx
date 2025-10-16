@@ -62,7 +62,7 @@ const ArticleCard = ({
       {/* Title */}
       <h3
         className={`font-bold mb-2 group-hover:text-primary transition-colors ${
-          featured ? "text-3xl md:text-4xl" : "text-xl md:text-2xl"
+          featured ? "text-2xl sm:text-3xl lg:text-4xl" : "text-lg sm:text-xl lg:text-2xl"
         }`}
       >
         {title}
@@ -70,7 +70,7 @@ const ArticleCard = ({
 
       {/* Excerpt */}
       {featured && (
-        <p className="text-muted-foreground mb-4 text-base leading-relaxed">
+        <p className="text-muted-foreground mb-3 sm:mb-4 text-sm sm:text-base leading-relaxed">
           {excerpt}
         </p>
       )}
