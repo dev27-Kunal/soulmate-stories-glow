@@ -22,20 +22,20 @@ const photos = [
 
 const PhotoGrid = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-romantic-dark">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-romantic-dark">
             Love Story Gallery
           </h2>
-          <p className="text-lg text-muted-foreground font-sans max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground font-sans max-w-2xl mx-auto px-4">
             Editorial photography celebrating the beauty of authentic connection
           </p>
         </div>
 
         {/* Photo Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {photos.map((photo) => (
             <div 
               key={photo.id} 
@@ -52,10 +52,10 @@ const PhotoGrid = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-elegant" />
               
               {/* Caption */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-elegant">
-                <p className="text-lg font-serif italic">{photo.caption}</p>
+              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-elegant">
+                <p className="text-sm sm:text-base md:text-lg font-serif italic">{photo.caption}</p>
                 {photo.featured && (
-                  <span className="inline-block mt-2 text-xs font-sans font-semibold tracking-wider bg-rose-gold/20 backdrop-blur-sm px-3 py-1 rounded-full border border-rose-gold/30">
+                  <span className="inline-block mt-1 sm:mt-2 text-[10px] sm:text-xs font-sans font-semibold tracking-wider bg-rose-gold/20 backdrop-blur-sm px-2 py-0.5 sm:px-3 sm:py-1 rounded-full border border-rose-gold/30">
                     FEATURED
                   </span>
                 )}

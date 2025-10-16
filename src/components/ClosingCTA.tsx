@@ -9,7 +9,7 @@ const ClosingCTA = () => {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
   return (
-    <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Bokeh Background Effect */}
       <div className="absolute inset-0 gradient-romantic">
         <div className="absolute top-10 left-10 w-64 h-64 bg-rose-gold/20 rounded-full blur-3xl animate-float" />
@@ -20,21 +20,21 @@ const ClosingCTA = () => {
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Quote */}
-        <blockquote className="mb-12">
-          <p className="text-3xl sm:text-4xl lg:text-5xl font-serif italic text-romantic-dark leading-relaxed mb-6">
+        <blockquote className="mb-8 sm:mb-10 md:mb-12">
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif italic text-romantic-dark leading-relaxed mb-4 sm:mb-6 px-4">
             "Discover the Soulmate X Story — Where Vision Meets Emotion."
           </p>
-          <div className="w-16 h-1 bg-gradient-gold mx-auto rounded-full" />
+          <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-gradient-gold mx-auto rounded-full" />
         </blockquote>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
           <Button 
             size="lg"
             onClick={() => setIsBrandFilmOpen(true)}
-            className="gradient-gold hover:shadow-elegant transition-elegant rounded-full px-8 py-6 text-lg font-sans font-semibold min-w-[200px]"
+            className="gradient-gold hover:shadow-elegant transition-elegant rounded-full px-6 py-5 sm:px-8 sm:py-6 text-base sm:text-lg font-sans font-semibold w-full sm:w-auto sm:min-w-[200px]"
           >
-            <Play className="w-5 h-5 mr-2" fill="currentColor" />
+            <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="currentColor" />
             Watch Brand Film
           </Button>
           
@@ -42,9 +42,9 @@ const ClosingCTA = () => {
             size="lg"
             variant="outline"
             onClick={() => setIsGalleryOpen(true)}
-            className="border-2 border-romantic-dark text-romantic-dark hover:bg-romantic-dark hover:text-white transition-elegant rounded-full px-8 py-6 text-lg font-sans font-semibold min-w-[200px]"
+            className="border-2 border-romantic-dark text-romantic-dark hover:bg-romantic-dark hover:text-white transition-elegant rounded-full px-6 py-5 sm:px-8 sm:py-6 text-base sm:text-lg font-sans font-semibold w-full sm:w-auto sm:min-w-[200px]"
           >
-            <Image className="w-5 h-5 mr-2" />
+            <Image className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
             Explore Media Gallery
           </Button>
         </div>

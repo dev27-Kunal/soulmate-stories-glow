@@ -20,30 +20,30 @@ const StatsSection = () => {
   ];
 
   return (
-    <section id="share-story" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+    <section id="share-story" className="py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-romantic-dark">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-romantic-dark">
             A Global Community
           </h2>
-          <p className="text-lg text-muted-foreground font-sans max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground font-sans max-w-2xl mx-auto px-4">
             Join thousands of couples sharing their unique love stories with the world
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="text-center p-8 rounded-2xl bg-card shadow-soft hover:shadow-elegant transition-elegant group"
+              className="text-center p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl bg-card shadow-soft hover:shadow-elegant transition-elegant group"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-gold mb-4 group-hover:scale-110 transition-elegant">
-                <stat.icon className="w-8 h-8 text-white" />
+              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gradient-gold mb-3 sm:mb-4 group-hover:scale-110 transition-elegant">
+                <stat.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
               </div>
-              <div className="text-4xl font-bold text-romantic-dark mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-romantic-dark mb-1 sm:mb-2">
                 {stat.value}
               </div>
-              <div className="text-muted-foreground font-sans">
+              <div className="text-sm sm:text-base text-muted-foreground font-sans">
                 {stat.label}
               </div>
             </div>
