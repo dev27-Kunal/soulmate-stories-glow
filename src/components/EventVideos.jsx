@@ -48,7 +48,7 @@ const eventVideos = [
 ];
 
 const EventVideos = () => {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [hoveredId, setHoveredId] = useState(null);
 
   return (
     <section className="py-8 sm:py-12 md:py-16 lg:py-24 px-4 sm:px-6 bg-gradient-to-b from-background via-cream/20 to-background">

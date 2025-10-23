@@ -7,12 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Heart, Upload } from "lucide-react";
 import { toast } from "sonner";
 
-interface ShareStoryModalProps {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-}
-
-const ShareStoryModal = ({ open, onOpenChange }: ShareStoryModalProps) => {
+const ShareStoryModal = ({ open, onOpenChange }) => {
   const [formData, setFormData] = useState({
     names: "",
     email: "",
@@ -20,7 +15,7 @@ const ShareStoryModal = ({ open, onOpenChange }: ShareStoryModalProps) => {
     location: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
     // Show success message

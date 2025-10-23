@@ -21,11 +21,6 @@ import photo7 from "@/assets/photo-7.jpg";
 import photo8 from "@/assets/photo-8.jpg";
 import photo9 from "@/assets/photo-9.jpg";
 
-interface MediaGalleryModalProps {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-}
-
 const galleryPhotos = [
   { id: 1, src: photo1, caption: "Vogue Feature – August 2025" },
   { id: 2, src: photo2, caption: "Behind the Scenes" },
@@ -38,7 +33,7 @@ const galleryPhotos = [
   { id: 9, src: photo9, caption: "Captured Emotions" },
 ];
 
-const MediaGalleryModal = ({ open, onOpenChange }: MediaGalleryModalProps) => {
+const MediaGalleryModal = ({ open, onOpenChange }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-6xl p-8 bg-gradient-to-br from-cream to-rose-gold/10 border-romantic-dark/20">
