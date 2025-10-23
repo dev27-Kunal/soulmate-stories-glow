@@ -52,7 +52,7 @@ const parisStories = [
 ];
 
 const ParisPhotographers = () => {
-  const [hoveredId, setHoveredId] = useState(null);
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
     <section className="py-8 sm:py-12 md:py-16 lg:py-24 px-4 sm:px-6 bg-gradient-to-b from-background via-romantic-gold/5 to-background relative overflow-hidden">

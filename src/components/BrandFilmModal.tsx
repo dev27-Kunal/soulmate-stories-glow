@@ -5,7 +5,12 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-const BrandFilmModal = ({ open, onOpenChange }) => {
+interface BrandFilmModalProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}
+
+const BrandFilmModal = ({ open, onOpenChange }: BrandFilmModalProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-5xl p-0 overflow-hidden bg-black border-romantic-dark/20">

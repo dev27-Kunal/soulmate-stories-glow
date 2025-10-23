@@ -1,6 +1,20 @@
 import { Eye, Heart, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
+interface ArticleCardProps {
+  image: string;
+  category: string;
+  title: string;
+  excerpt: string;
+  author: string;
+  date: string;
+  time: string;
+  views: number;
+  likes: number;
+  comments: number;
+  featured?: boolean;
+}
+
 const ArticleCard = ({
   image,
   category,
@@ -13,7 +27,7 @@ const ArticleCard = ({
   likes,
   comments,
   featured = false,
-}) => {
+}: ArticleCardProps) => {
   const [isLiked, setIsLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(likes);
 
