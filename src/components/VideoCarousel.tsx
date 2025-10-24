@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import video1 from "@/assets/video-1.jpg";
 import video2 from "@/assets/video-2.jpg";
 import video3 from "@/assets/video-3.jpg";
@@ -11,23 +12,27 @@ const videos = [
     title: "Innovation in Motion",
     description: "Discover how modern love breaks boundaries",
     thumbnail: video1,
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
   },
   {
     id: 2,
     title: "The Art of Connection",
     description: "An intimate journey through meaningful relationships",
     thumbnail: video2,
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
   },
   {
     id: 3,
     title: "Passion Meets Purpose",
     description: "When two souls unite for something greater",
     thumbnail: video3,
+    videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
   },
 ];
 
 const VideoCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [playingVideo, setPlayingVideo] = useState<typeof videos[0] | null>(null);
 
   const next = () => {
     setCurrentIndex((prev) => (prev + 1) % videos.length);
@@ -71,7 +76,11 @@ const VideoCarousel = () => {
                     
                     {/* Play Button */}
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-elegant">
-                      <button className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white flex items-center justify-center hover:bg-white/30 transition-elegant">
+                      <button 
+                        onClick={() => setPlayingVideo(video)}
+                        className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white flex items-center justify-center hover:bg-white/30 transition-elegant"
+                        aria-label={`Play ${video.title}`}
+                      >
                         <Play className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white ml-0.5 sm:ml-1" fill="white" />
                       </button>
                     </div>
@@ -122,6 +131,32 @@ const VideoCarousel = () => {
             ))}
           </div>
         </div>
+
+        {/* Video Modal */}
+        <Dialog open={!!playingVideo} onOpenChange={() => setPlayingVideo(null)}>
+          <DialogContent className="max-w-5xl p-0 bg-black border-0">
+            <button
+              onClick={() => setPlayingVideo(null)}
+              className="absolute -top-10 right-0 z-50 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 flex items-center justify-center transition-colors"
+              aria-label="Close video"
+            >
+              <X className="w-6 h-6 text-white" />
+            </button>
+            {playingVideo && (
+              <div className="relative aspect-video">
+                <video
+                  src={playingVideo.videoUrl}
+                  controls
+                  autoPlay
+                  className="w-full h-full"
+                  poster={playingVideo.thumbnail}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
