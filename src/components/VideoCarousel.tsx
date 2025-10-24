@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
 import video1 from "@/assets/video-1.jpg";
 import video2 from "@/assets/video-2.jpg";
 import video3 from "@/assets/video-3.jpg";
@@ -32,14 +31,20 @@ const videos = [
 
 const VideoCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [playingVideo, setPlayingVideo] = useState<typeof videos[0] | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const next = () => {
     setCurrentIndex((prev) => (prev + 1) % videos.length);
+    setIsPlaying(false);
   };
 
   const prev = () => {
     setCurrentIndex((prev) => (prev - 1 + videos.length) % videos.length);
+    setIsPlaying(false);
+  };
+
+  const handlePlay = () => {
+    setIsPlaying(true);
   };
 
   return (
@@ -62,36 +67,53 @@ const VideoCarousel = () => {
               className="flex transition-transform duration-500 ease-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              {videos.map((video) => (
+              {videos.map((video, index) => (
                 <div key={video.id} className="min-w-full relative group">
                   <div className="aspect-video relative overflow-hidden">
-                    <img 
-                      src={video.thumbnail} 
-                      alt={video.title}
-                      className="w-full h-full object-cover transition-elegant group-hover:scale-105"
-                    />
-                    
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-elegant" />
-                    
-                    {/* Play Button */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-elegant">
-                      <button 
-                        onClick={() => setPlayingVideo(video)}
-                        className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white flex items-center justify-center hover:bg-white/30 transition-elegant"
-                        aria-label={`Play ${video.title}`}
+                    {isPlaying && index === currentIndex ? (
+                      // Video Player
+                      <video
+                        src={video.videoUrl}
+                        controls
+                        autoPlay
+                        className="w-full h-full object-cover"
+                        poster={video.thumbnail}
+                        onEnded={() => setIsPlaying(false)}
                       >
-                        <Play className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white ml-0.5 sm:ml-1" fill="white" />
-                      </button>
-                    </div>
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : (
+                      // Thumbnail with Play Button
+                      <>
+                        <img 
+                          src={video.thumbnail} 
+                          alt={video.title}
+                          className="w-full h-full object-cover transition-elegant group-hover:scale-105"
+                        />
+                        
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-elegant" />
+                        
+                        {/* Play Button */}
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-elegant">
+                          <button 
+                            onClick={handlePlay}
+                            className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white flex items-center justify-center hover:bg-white/30 transition-elegant"
+                            aria-label={`Play ${video.title}`}
+                          >
+                            <Play className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white ml-0.5 sm:ml-1" fill="white" />
+                          </button>
+                        </div>
+                      </>
+                    )}
 
-                  {/* Text Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white transform translate-y-4 group-hover:translate-y-0 transition-elegant">
-                    <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2">{video.title}</h3>
-                    <p className="text-xs sm:text-sm md:text-base lg:text-lg opacity-0 group-hover:opacity-100 transition-elegant font-sans">
-                      {video.description}
-                    </p>
-                  </div>
+                    {/* Text Content - Always visible */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white bg-gradient-to-t from-black/80 to-transparent">
+                      <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2">{video.title}</h3>
+                      <p className="text-xs sm:text-sm md:text-base lg:text-lg font-sans opacity-90">
+                        {video.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -131,32 +153,6 @@ const VideoCarousel = () => {
             ))}
           </div>
         </div>
-
-        {/* Video Modal */}
-        <Dialog open={!!playingVideo} onOpenChange={() => setPlayingVideo(null)}>
-          <DialogContent className="max-w-5xl p-0 bg-black border-0">
-            <button
-              onClick={() => setPlayingVideo(null)}
-              className="absolute -top-10 right-0 z-50 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 flex items-center justify-center transition-colors"
-              aria-label="Close video"
-            >
-              <X className="w-6 h-6 text-white" />
-            </button>
-            {playingVideo && (
-              <div className="relative aspect-video">
-                <video
-                  src={playingVideo.videoUrl}
-                  controls
-                  autoPlay
-                  className="w-full h-full"
-                  poster={playingVideo.thumbnail}
-                >
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            )}
-          </DialogContent>
-        </Dialog>
       </div>
     </section>
   );
