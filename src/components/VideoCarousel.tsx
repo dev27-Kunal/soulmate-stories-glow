@@ -71,17 +71,26 @@ const VideoCarousel = () => {
                 <div key={video.id} className="min-w-full relative group">
                   <div className="aspect-video relative overflow-hidden">
                     {isPlaying && index === currentIndex ? (
-                      // Video Player
-                      <video
-                        src={video.videoUrl}
-                        controls
-                        autoPlay
-                        className="w-full h-full object-cover"
-                        poster={video.thumbnail}
-                        onEnded={() => setIsPlaying(false)}
-                      >
-                        Your browser does not support the video tag.
-                      </video>
+                      // Video Player with text overlay
+                      <div className="relative w-full h-full">
+                        <video
+                          src={video.videoUrl}
+                          controls
+                          autoPlay
+                          className="w-full h-full object-cover"
+                          poster={video.thumbnail}
+                          onEnded={() => setIsPlaying(false)}
+                        >
+                          Your browser does not support the video tag.
+                        </video>
+                        {/* Text Content - Positioned above video controls */}
+                        <div className="absolute bottom-12 sm:bottom-14 md:bottom-16 left-0 right-0 p-4 sm:p-6 md:p-8 text-white bg-gradient-to-t from-black/80 via-black/60 to-transparent pointer-events-none">
+                          <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2">{video.title}</h3>
+                          <p className="text-xs sm:text-sm md:text-base lg:text-lg font-sans opacity-90">
+                            {video.description}
+                          </p>
+                        </div>
+                      </div>
                     ) : (
                       // Thumbnail with Play Button
                       <>
@@ -104,16 +113,16 @@ const VideoCarousel = () => {
                             <Play className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-white ml-0.5 sm:ml-1" fill="white" />
                           </button>
                         </div>
+
+                        {/* Text Content - Only on thumbnail */}
+                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white bg-gradient-to-t from-black/80 to-transparent">
+                          <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2">{video.title}</h3>
+                          <p className="text-xs sm:text-sm md:text-base lg:text-lg font-sans opacity-90">
+                            {video.description}
+                          </p>
+                        </div>
                       </>
                     )}
-
-                    {/* Text Content - Always visible */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white bg-gradient-to-t from-black/80 to-transparent">
-                      <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2">{video.title}</h3>
-                      <p className="text-xs sm:text-sm md:text-base lg:text-lg font-sans opacity-90">
-                        {video.description}
-                      </p>
-                    </div>
                   </div>
                 </div>
               ))}
