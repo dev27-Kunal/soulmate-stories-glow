@@ -83,8 +83,8 @@ const VideoCarousel = () => {
                         >
                           Your browser does not support the video tag.
                         </video>
-                        {/* Text Content - Positioned above video controls */}
-                        <div className="absolute bottom-12 sm:bottom-14 md:bottom-16 left-0 right-0 p-4 sm:p-6 md:p-8 text-white bg-gradient-to-t from-black/80 via-black/60 to-transparent pointer-events-none">
+                        {/* Text Content - Positioned at top */}
+                        <div className="absolute top-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white bg-gradient-to-b from-black/80 via-black/60 to-transparent pointer-events-none">
                           <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2">{video.title}</h3>
                           <p className="text-xs sm:text-sm md:text-base lg:text-lg font-sans opacity-90">
                             {video.description}
@@ -115,7 +115,7 @@ const VideoCarousel = () => {
                         </div>
 
                         {/* Text Content - Only on thumbnail */}
-                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white bg-gradient-to-t from-black/80 to-transparent">
+                        <div className="absolute top-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white bg-gradient-to-b from-black/80 to-transparent">
                           <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2">{video.title}</h3>
                           <p className="text-xs sm:text-sm md:text-base lg:text-lg font-sans opacity-90">
                             {video.description}
