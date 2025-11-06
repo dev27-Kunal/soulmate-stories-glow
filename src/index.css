@@ -8,57 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Luxurious Rose-Gold Palette */
-    --background: 40 35% 97%;
-    --foreground: 340 45% 15%;
+    /* Deeper, Muted Rose-Gold Palette */
+    --background: 40 15% 92%;
+    --foreground: 340 50% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 340 45% 15%;
+    --card: 40 10% 96%;
+    --card-foreground: 340 50% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 340 45% 15%;
+    --popover: 40 10% 96%;
+    --popover-foreground: 340 50% 12%;
 
-    /* Rose-gold primary */
-    --primary: 28 60% 65%;
-    --primary-foreground: 0 0% 100%;
+    /* Deeper rose-gold primary */
+    --primary: 28 50% 52%;
+    --primary-foreground: 0 0% 98%;
 
-    /* Cream secondary */
-    --secondary: 40 30% 94%;
-    --secondary-foreground: 340 45% 15%;
+    /* Muted secondary */
+    --secondary: 40 15% 88%;
+    --secondary-foreground: 340 50% 12%;
 
-    /* Soft muted tones */
-    --muted: 40 25% 92%;
-    --muted-foreground: 340 20% 45%;
+    /* Deeper muted tones */
+    --muted: 40 12% 85%;
+    --muted-foreground: 340 25% 38%;
 
-    /* Warm gold accent */
-    --accent: 42 85% 62%;
-    --accent-foreground: 340 60% 10%;
+    /* Richer gold accent */
+    --accent: 42 70% 48%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 70% 52%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
-    --ring: 28 60% 65%;
+    --border: 40 15% 80%;
+    --input: 40 15% 80%;
+    --ring: 28 50% 52%;
 
     --radius: 0.75rem;
 
-    /* Custom luxurious tokens */
-    --rose-gold: 28 60% 65%;
-    --warm-gold: 42 85% 62%;
-    --cream: 40 30% 94%;
-    --romantic-dark: 340 45% 15%;
-    --soft-glow: 28 80% 75%;
+    /* Custom deeper luxurious tokens */
+    --rose-gold: 28 50% 52%;
+    --warm-gold: 42 70% 48%;
+    --cream: 40 15% 88%;
+    --romantic-dark: 340 50% 12%;
+    --soft-glow: 28 60% 60%;
     
-    /* Gradients */
-    --gradient-romantic: linear-gradient(135deg, hsl(340, 50%, 85%) 0%, hsl(28, 60%, 80%) 50%, hsl(40, 40%, 90%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(340, 40%, 92%) 0%, hsl(28, 50%, 88%) 50%, hsl(40, 35%, 94%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(42, 85%, 62%) 0%, hsl(28, 60%, 65%) 100%);
+    /* Deeper, richer gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(340, 40%, 70%) 0%, hsl(28, 50%, 65%) 50%, hsl(40, 30%, 75%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(340, 30%, 78%) 0%, hsl(28, 40%, 72%) 50%, hsl(40, 25%, 82%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42, 70%, 48%) 0%, hsl(28, 50%, 52%) 100%);
     
-    /* Shadows & Effects */
-    --shadow-soft: 0 4px 20px rgba(212, 175, 135, 0.15);
-    --shadow-elegant: 0 8px 30px rgba(212, 175, 135, 0.25);
-    --glow-rose: 0 0 30px rgba(212, 175, 135, 0.4);
+    /* Deeper shadows with richer tones */
+    --shadow-soft: 0 4px 20px rgba(150, 110, 85, 0.2);
+    --shadow-elegant: 0 8px 30px rgba(150, 110, 85, 0.35);
+    --glow-rose: 0 0 30px rgba(150, 110, 85, 0.45);
     
     /* Transitions */
     --transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
