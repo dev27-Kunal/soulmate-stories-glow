@@ -12,10 +12,10 @@ All colors MUST be HSL.
     --background: 340 35% 12%;
     --foreground: 40 35% 95%;
 
-    --card: 340 30% 16%;
+    --card: 340 28% 20%;
     --card-foreground: 40 35% 95%;
 
-    --popover: 340 30% 16%;
+    --popover: 340 28% 20%;
     --popover-foreground: 40 35% 95%;
 
     /* Vibrant rose-gold primary */
@@ -27,7 +27,7 @@ All colors MUST be HSL.
     --secondary-foreground: 40 35% 95%;
 
     /* Deep muted tones */
-    --muted: 340 20% 22%;
+    --muted: 340 20% 25%;
     --muted-foreground: 40 25% 80%;
 
     /* Bright gold accent */
@@ -37,8 +37,8 @@ All colors MUST be HSL.
     --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 340 25% 28%;
-    --input: 340 25% 28%;
+    --border: 340 25% 32%;
+    --input: 340 25% 32%;
     --ring: 18 70% 65%;
 
     --radius: 0.75rem;
