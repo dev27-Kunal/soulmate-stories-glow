@@ -64,12 +64,12 @@ const ParisPhotographers = () => {
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
           <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
-            <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-            <p className="text-primary font-sans text-xs sm:text-sm tracking-widest uppercase">
+            <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-romantic-gold" />
+            <p className="text-romantic-gold font-sans text-xs sm:text-sm tracking-widest uppercase">
               Stories from Paris
             </p>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif text-foreground mb-4 sm:mb-6 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif text-romantic-dark mb-4 sm:mb-6 px-4">
             Captured by Paris Photographers
           </h2>
           <p className="text-muted-foreground font-sans text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
@@ -83,7 +83,7 @@ const ParisPhotographers = () => {
             {parisStories.map((story, index) => (
               <CarouselItem key={story.id} className="basis-full md:basis-1/2">
                 <div
-                  className="group relative overflow-hidden rounded-3xl shadow-elegant hover:shadow-[0_0_40px_rgba(212,175,135,0.5)] transition-elegant mx-2 bg-card animate-fade-in"
+                  className="group relative overflow-hidden rounded-3xl shadow-elegant hover:shadow-[0_0_40px_rgba(212,175,135,0.5)] transition-elegant mx-2 bg-white animate-fade-in"
                   style={{ animationDelay: `${index * 100}ms` }}
                   onMouseEnter={() => setHoveredId(story.id)}
                   onMouseLeave={() => setHoveredId(null)}
@@ -100,26 +100,26 @@ const ParisPhotographers = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-elegant" />
                     
                     {/* Location Badge */}
-                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 bg-card/95 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-1 sm:gap-2 border border-border">
-                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
-                      <span className="text-foreground text-xs sm:text-sm font-sans font-medium">
+                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 md:top-6 md:right-6 bg-white/90 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full flex items-center gap-1 sm:gap-2">
+                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-romantic-gold" />
+                      <span className="text-romantic-dark text-xs sm:text-sm font-sans font-medium">
                         Paris
                       </span>
                     </div>
 
                     {/* Heart Icon */}
-                    <div className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-6 gradient-gold w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-elegant group-hover:scale-110 shadow-elegant">
-                      <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" fill="currentColor" />
+                    <div className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-6 bg-romantic-gold/90 backdrop-blur-sm w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-elegant group-hover:scale-110">
+                      <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="currentColor" />
                     </div>
                   </div>
 
                   {/* Story Content */}
                   <div className="p-4 sm:p-6 md:p-8">
                     <div className="mb-3 sm:mb-4">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-serif text-romantic-dark mb-1 sm:mb-2 group-hover:text-romantic-gold transition-colors">
                         {story.couple}
                       </h3>
-                      <p className="text-primary/80 font-sans text-xs sm:text-sm flex items-center gap-2">
+                      <p className="text-romantic-gold/80 font-sans text-xs sm:text-sm flex items-center gap-2">
                         <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
                         {story.location}
                       </p>
@@ -131,16 +131,16 @@ const ParisPhotographers = () => {
                       "{story.story}"
                     </p>
 
-                    <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-border">
+                    <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-romantic-dark/10">
                       <div>
-                        <p className="text-foreground font-sans font-medium text-xs sm:text-sm">
+                        <p className="text-romantic-dark font-sans font-medium text-xs sm:text-sm">
                           {story.photographer}
                         </p>
                         <p className="text-muted-foreground font-sans text-[10px] sm:text-xs">
                           Paris Photographer
                         </p>
                       </div>
-                      <p className="text-primary font-sans text-xs sm:text-sm">
+                      <p className="text-romantic-gold font-sans text-xs sm:text-sm">
                         {story.date}
                       </p>
                     </div>
