@@ -10,50 +10,50 @@ All colors MUST be HSL.
   :root {
     /* Dramatic Dark Moody Rose-Gold Palette */
     --background: 340 35% 12%;
-    --foreground: 40 35% 92%;
+    --foreground: 40 35% 95%;
 
-    --card: 340 30% 15%;
-    --card-foreground: 40 35% 92%;
+    --card: 340 30% 16%;
+    --card-foreground: 40 35% 95%;
 
-    --popover: 340 30% 15%;
-    --popover-foreground: 40 35% 92%;
+    --popover: 340 30% 16%;
+    --popover-foreground: 40 35% 95%;
 
     /* Vibrant rose-gold primary */
-    --primary: 18 65% 58%;
+    --primary: 18 70% 65%;
     --primary-foreground: 340 50% 10%;
 
     /* Rich secondary */
-    --secondary: 340 25% 22%;
-    --secondary-foreground: 40 35% 92%;
+    --secondary: 340 25% 24%;
+    --secondary-foreground: 40 35% 95%;
 
     /* Deep muted tones */
-    --muted: 340 20% 20%;
-    --muted-foreground: 40 20% 75%;
+    --muted: 340 20% 22%;
+    --muted-foreground: 40 25% 80%;
 
     /* Bright gold accent */
-    --accent: 42 80% 62%;
+    --accent: 42 85% 65%;
     --accent-foreground: 340 50% 10%;
 
     --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 340 25% 25%;
-    --input: 340 25% 25%;
-    --ring: 18 65% 58%;
+    --border: 340 25% 28%;
+    --input: 340 25% 28%;
+    --ring: 18 70% 65%;
 
     --radius: 0.75rem;
 
     /* Dramatic luxurious tokens */
-    --rose-gold: 18 65% 58%;
-    --warm-gold: 42 80% 62%;
-    --cream: 30 20% 75%;
-    --romantic-dark: 340 35% 12%;
-    --soft-glow: 18 75% 65%;
+    --rose-gold: 18 70% 65%;
+    --warm-gold: 42 85% 65%;
+    --cream: 40 30% 85%;
+    --romantic-dark: 40 35% 95%;
+    --soft-glow: 18 75% 70%;
     
     /* Moody, dramatic gradients */
-    --gradient-romantic: linear-gradient(135deg, hsl(340, 55%, 45%) 0%, hsl(18, 65%, 50%) 50%, hsl(38, 50%, 55%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(340, 45%, 35%) 0%, hsl(18, 55%, 40%) 50%, hsl(30, 40%, 50%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(42, 80%, 50%) 0%, hsl(18, 65%, 55%) 100%);
+    --gradient-romantic: linear-gradient(135deg, hsl(340, 60%, 50%) 0%, hsl(18, 70%, 58%) 50%, hsl(38, 55%, 62%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(340, 50%, 38%) 0%, hsl(18, 60%, 45%) 50%, hsl(30, 45%, 55%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42, 85%, 58%) 0%, hsl(18, 70%, 62%) 100%);
     
     /* Intense dramatic shadows */
     --shadow-soft: 0 4px 24px rgba(180, 100, 70, 0.3);
